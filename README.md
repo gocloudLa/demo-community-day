@@ -31,7 +31,7 @@ Aquí es donde se desarrollan los módulos propios de la empresa. Estos módulos
 - Crear recursos desde cero cuando sea necesario.
 
 <br/>
-![directorios](images/directorios.png)
+![directorios](https://raw.githubusercontent.com/gocloudLa/demo-community-day/main/images/directorios.png)
 <br/>
 
 ### ¿Cómo funciona todo junto?
