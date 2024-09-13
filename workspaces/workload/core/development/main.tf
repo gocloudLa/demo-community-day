@@ -30,28 +30,7 @@ module "wrapper_workload" {
         weight            = 100
       }]
 
-      tasks_iam_role_statements = [
-        {
-          actions = [
-            "s3:ListBucket",
-            "s3:ListAllMyBuckets"
-          ]
-          resources = ["arn:aws:s3:::*"]
-        },
-        {
-          actions = [
-            "s3:GetObject",
-            "s3:PutObject",
-            "s3:DeleteObject",
-            "s3:GetObjectVersion",
-            "s3:GetBucketPolicy",
-            "s3:GetBucketAcl",
-            "s3:GetBucketVersioning",
-            "s3:GetLifecycleConfiguration"
-          ]
-          resources = [data.aws_s3_bucket.storage.arn]
-        }
-      ]
+      tasks_iam_role_statements = []
 
       containers = {
         app = {
@@ -72,7 +51,7 @@ module "wrapper_workload" {
                 }
                 dns_records = {
                   "blog" = {
-                    zone_name    = "${local.zone_public}"
+                    zone_name    = "${local.zone_public}" # dev.democorp.cloud
                     private_zone = false
                   }
                 }
@@ -81,7 +60,7 @@ module "wrapper_workload" {
                     priority = 110
                     conditions = [
                       {
-                        host_headers = ["blog.${local.zone_public}"]
+                        host_headers = ["blog.${local.zone_public}"] # blog.dev.democorp.cloud
                       }
                     ]
                   }

@@ -94,9 +94,6 @@ module "project_core" {
       backup_retention_period = "7"
       apply_immediately       = true
 
-      # DB MANAGEMENT
-      enable_db_management                    = false
-      enable_db_management_logs_notifications = false
     }
   }
 
